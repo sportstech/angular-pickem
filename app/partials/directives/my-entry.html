@@ -1,0 +1,11 @@
+<section ng-controller="LeaderboardCtrl">
+  <div ng-repeat="leaderboard in leaderboards | filter: isMyEntry=true" class="clear">
+    <div class="g-wide--1">
+      <p><strong>{{leaderboard.entry}}</strong></p>
+    </div>
+    <div class="g-wide--2">
+      <p><strong>Points:</strong> {{leaderboard.points}} <strong>Rank:</strong> {{leaderboard.rank}} <strong>Percentile:</strong> {{leaderboard.percentile}}</p>
+    </div>
+  </div>
+  <hr>
+</section>

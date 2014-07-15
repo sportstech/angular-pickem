@@ -1,0 +1,29 @@
+<main class="clear">
+  <my-entry></my-entry>
+  <section ng-controller="picksCtrl">
+    <h1>Picks</h1>
+    <p>Drag and drop these suckas in the order you believe they will end up in by the end of the race!</p>
+    <p class="clear">
+      <span class="g-wide--1"><strong>Race Position</strong></span>
+      <span class="g-wide--1"><strong>Silk Number</strong></span>
+      <span class="g-wide--1"><strong>Horse Name</strong></span>
+      <span class="g-wide--1 g--last"><strong>Jockey Name</strong></span>
+    </p>
+    <ul class="picks-list first list-links list-links--secondary"  ui-sortable="sortableOptions" ng-model="sourceScreens">
+      <li ng-repeat="app in sourceScreens track by $index" class="clear race-position-{{$index + 1}}">
+        <div class="g-wide--1">
+          {{$index + 1}}
+        </div>
+        <div class="g-wide--1">
+          <div class="silk--number-{{app.silkNumber}}">{{app.silkNumber}}</div>
+        </div>
+        <div class="g-wide--1">
+          {{app.horseName}}
+        </div>
+        <div class="g-wide--1 g--last">
+          {{app.jockeyName}}
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>

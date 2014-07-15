@@ -1,0 +1,34 @@
+<main>
+  <my-entry></my-entry>
+  <section ng-controller="LeaderboardCtrl">
+    <h1>Leaderboard</h1>
+    <table class="table-3">
+        <colgroup>
+            <col span="1">
+            <col span="1">
+            <col span="1">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Entry</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="leaderboard in leaderboards | filter: isMyEntry=true" class="is-my-entry">
+            <td>{{leaderboard.rank}}</td>
+            <td><i class="icon icon-tick"></i> {{leaderboard.entry}}</td>
+            <td>{{leaderboard.points}}</td>
+          </tr>
+          <tr ng-repeat="leaderboard in leaderboards | filter: isMyEntry=false">
+            <td>{{leaderboard.rank}}</td>
+            <td>{{leaderboard.entry}}</td>
+            <td>{{leaderboard.points}}</td>
+          </tr>
+        </tbody>
+    </table>
+    <p><i class="icon icon-tick"></i> = My entry</p>
+  </section>
+
+</main>

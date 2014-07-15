@@ -1,0 +1,110 @@
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: #ccc 1px solid
+}
+
+table tr.active {
+  outline: red 10px solid;
+}
+
+.tar {
+  text-align: right;
+}
+
+.tal {
+  text-align: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+
+.pull-left {
+  float: left
+}
+
+.is-my-entry td {
+  background-color: black;
+  color: white;
+}
+
+.picks-list li {
+  border-bottom: #ccc 1px solid;
+  padding: 10px
+}
+
+.ui-sortable-helper {
+  background-color: #f4f4f4;
+}
+li.droppable-slot {
+  background-color: #f4f4f4;
+  border: #ccc 2px dashed;
+  padding: 20px;
+}
+
+[class^="silk--number"] {
+  color: #ccc;
+  padding: 5px 0;
+  width: 30px;
+  text-align: center;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+[class$="number-1"] {
+  background-color: #000;
+  color: white;
+}
+[class$="number-2"] {
+  background-color: red;
+  color: white;
+}
+[class$="number-3"] {
+  background-color: green;
+  color: white;
+}
+[class$="number-4"] {
+  background-color: blue;
+  color: white;
+}
+[class$="number-5"] {
+  background-color: gray;
+  color: white;
+}
+[class$="number-6"] {
+  background-color: orange;
+  color: white;
+}
+[class$="number-7"] {
+  background-color: maroon;
+  color: white;
+}
+[class$="number-8"] {
+  background-color: darkblue;
+  color: white;
+}
+[class$="number-9"] {
+  background-color: darkorchid;
+  color: white;
+}
+[class$="number-10"] {
+  background-color: darkslateblue;
+  color: white;
+}
+[class$="number-11"] {
+  background-color: purple;
+  color: white;
+}
+[class$="number-12"] {
+  background-color: sienna;
+  color: white;
+}
+
+.race-position-11, .race-position-12 {
+  opacity: .3;
+  background-color: #ccc;
+  border-bottom-color: #333 !important;
+}
