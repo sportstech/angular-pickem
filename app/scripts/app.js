@@ -1,3 +1,5 @@
+'use strict';
+
 var myApp = angular.module('myApp', [
     "ngRoute",
     "gameControllers",
@@ -21,11 +23,12 @@ myApp.config(['$routeProvider', function($routeProvider){
       controller: 'LeagueDetailsCtrl'
     })
     .when('/picks', {
-      templateUrl: 'partials/picks.html'
+      templateUrl: 'partials/picks.html',
+      controller: "PicksCtrl"
     })
     .when('/leaderboard', {
       templateUrl: 'partials/leaderboard.html',
-      //controller: 'LeaderboardCtrl'
+      controller: 'LeaderboardCtrl'
     })
     .otherwise({redirectTo:'/landing'})
 }]);

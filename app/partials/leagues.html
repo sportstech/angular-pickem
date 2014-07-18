@@ -1,29 +1,4 @@
 <main>
   <my-entry></my-entry>
-  <section  ng-controller="LeagueCtrl">
-    <h1>Leagues</h1>
-    <table class="table-3">
-        <colgroup>
-            <col span="1">
-            <col span="1">
-            <col span="1">
-        </colgroup>
-        <thead>
-            <tr>
-                <th>Access</th>
-                <th>League Name</th>
-                <th>Members</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="league in leagues">
-            <td>{{league.accessType}}</td>
-            <td>
-              <a ng-href="#/leagues-details/{{leagues.indexOf(league)}}">{{league.leagueName}}</a>
-            </td>
-            <td>{{countMembers(league.entries)}}</td>
-          </tr>
-        </tbody>
-    </table>
-  </section>
+  <leagues></leagues>
 </main>

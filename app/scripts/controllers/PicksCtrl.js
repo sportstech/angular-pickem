@@ -1,4 +1,6 @@
-gameControllers.controller('picksCtrl', ['$scope', '$http', function($scope, $http){    
+'use strict';
+
+gameControllers.controller('PicksCtrl', ['$scope', '$http', function($scope, $http){    
   var picks = [
     {
         id: 1,

@@ -1,3 +1,5 @@
+'use strict';
+
 gameControllers.controller('MainCtrl', ['$scope', '$location', '$http', function($scope, $location, $http){
   $scope.siteName = 'Pick\'em App Angular Redesign';
   var gameInfo = {
