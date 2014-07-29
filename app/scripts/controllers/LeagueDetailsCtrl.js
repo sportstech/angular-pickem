@@ -4,6 +4,7 @@ gameControllers.controller('LeagueDetailsCtrl', ['$scope', '$http', '$routeParam
   $http.get('../scripts/app-data/leagues.js').success(function(data) {
     $scope.leagues = data;
     $scope.whichItem = $routeParams.leagueId;
+    
     $scope.countMembers = function(entriesObj) {
       return Object.keys(entriesObj).length;
     };
@@ -15,6 +16,13 @@ gameControllers.controller('LeagueDetailsCtrl', ['$scope', '$http', '$routeParam
       } else {
         return false;
       }
+    };
+
+
+    $scope.userIsMember = function() {
+      if ($scope.leagues.isMember === 'true') {
+        return true;
+      };
     };
 
     $scope.leave = function() {

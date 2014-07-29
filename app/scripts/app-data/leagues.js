@@ -3,7 +3,7 @@
     "id": 1,
     "accessType": "private",
     "leagueName": "Girl, It's True",
-    "isMember": true,
+    "userIsMember": "true",
     "entries": [
       {
         "entryName": "Rob Milli",
@@ -29,7 +29,7 @@
     "id": 2,
     "accessType": "public",
     "leagueName": "Fabulous Musical Insects",
-    "isMember": true,
+    "userIsMember": "true",
     "entries": [
       {
         "entryName": "John",
@@ -67,7 +67,7 @@
     "id": 3,
     "accessType": "public",
     "leagueName": "Rock & Roll Sinners",
-    "isMember": false,
+    "userIsMember": "false",
     "entries": [
       {
         "entryName": "Geezer Butler",

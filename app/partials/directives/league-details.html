@@ -2,20 +2,23 @@
   <div ng-repeat="league in leagues | filter: leagues[whichItem]">
     <h1 class="medium"><strong>{{leagues[whichItem].accessType}} league</strong></h1>
     
-    <div ng-if="isPrivate()">
-      <a href ng-click="showClick()" class="button--primary">
-        <span ng-show="showContent()"><i class="fa fa-check-circle"></i> Access Approved</span>
-        <span ng-show="!showContent()">Request Access</span>
-      </a>
-    </div>
+    <div ng-show="leagues[whichItem].userIsMember == 'false'">
+      <div ng-show="leagues[whichItem].accessType == 'private' ">
+        <a href ng-click="showClick()" class="button--primary">
+          <span ng-show="showContent()"><i class="fa fa-check-circle"></i> Access Approved</span>
+          <span ng-show="!showContent()">Request Access</span>
+        </a>
+      </div>
 
-    <div ng-if="!isPrivate()">
-      <a href ng-click="showClick()" class="button--primary">
-        <span ng-show="showContent()"><i class="fa fa-check-circle"></i> Joined</span>
-        <span ng-show="!showContent()">Join League</span>
-      </a>
-      <a href ng-show="showContent()" class="button--secondary" ng-click="leave()"><i class="fa fa-times-circle"></i> Leave League</a>
+      <div ng-show="leagues[whichItem].accessType == 'public' ">
+        <a href ng-click="showClick()" class="button--primary">
+          <span ng-show="showContent()"><i class="fa fa-check-circle"></i> Joined</span>
+          <span ng-show="!showContent()">Join League</span>
+        </a>
+        <a href ng-show="showContent()" class="button--secondary" ng-click="leave()"><i class="fa fa-times-circle"></i> Leave League</a>
+      </div>
     </div>
+    
     
     <div class="clear">
       <div class="g-wide--3">

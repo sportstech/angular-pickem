@@ -41,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="league in leagues">
+          <tr ng-class="{member: isMember(entry)}" ng-repeat="league in leagues">
             <td>{{league.accessType}}</td>
             <td>
               <a ng-href="#/leagues-details/{{leagues.indexOf(league)}}">{{league.leagueName}}</a>
