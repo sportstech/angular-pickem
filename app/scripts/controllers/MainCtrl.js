@@ -10,13 +10,31 @@ gameControllers.controller('MainCtrl', ['$scope', '$location', '$http', function
       twitter: 'http://www.twitter.com',
       google: 'http://www.google.com'
     },
-    gameState: 'picksOpened',
-    accessState: 'loggedIn',
+    gameState: 'picksOpened', // postLock
+    sessionState: 'loggedIn',
     poweredBy: 'Sports Technologies, LLC',
     poweredByLink: 'http://www.sportstechinc.com'
   };
   $scope.gameInfo = gameInfo;
+
   $scope.isCurrentPath = function (path) {
     return $location.path() == path;
   };
+
+  $scope.isPicksOpened = function() {
+    if (gameInfo.gameState == "picksOpened") {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  $scope.isLoggedIn = function() {
+    if (gameInfo.sessionState == "loggedIn") {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
 }]);

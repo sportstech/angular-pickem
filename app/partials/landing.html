@@ -1,11 +1,17 @@
 <div>
-    <div class="highlight-module highlight-module--learning  ">
+    <div class="highlight-module highlight-module--learning">
         <div class="highlight-module__container">
             <div class="highlight-module__content">
                 <p class="highlight-module__title"> Up For The Challenge?</p>
                 <p class="highlight-module__text"> Play along during the Breeders’ Cup Challenge Series on NBC Sports and you could win big! 12 races, 12 chances to win. There’s $15,000* cash up for grabs during each show and we’re giving away a VIP trip to the 2014 Breeders’ Cup. Then, top it all off with a chance to win $1 million during the Breeders’ Cup Classic on NBC. </p>
-                <a href="#/picks" class="button--primary">Login</a>
-                <a href="#/picks" class="button--primary">Register</a>
+                <div ng-show="isLoggedIn()">
+                  <a href="#/picks" class="button--primary">Enter</a>  
+                </div>
+                <div ng-show="!isLoggedIn()">
+                   <a href="#/picks" class="button--primary">Login</a>
+                   <a href="#/picks" class="button--primary">Register</a> 
+                </div>
+                
             </div>
         </div>
     </div>

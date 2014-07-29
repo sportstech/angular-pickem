@@ -1,0 +1,33 @@
+$black: #000
+$silk-1: $black
+$silk-2: red
+$silk-3: green
+$silk-4: blue
+$silk-5: gray
+$silk-6: orange
+$silk-7: maroon
+$silk-8: darkblue
+$silk-9: darkorchid
+$silk-10: darkslateblue
+$silk-11: purple
+$silk-12: sienna
+
+$silk-list: (("1", $silk-1), ("2", $silk-2), ("3", $silk-3), ("4", $silk-4), ("5", $silk-5),("6", $silk-6), ("7", $silk-7), ("8", $silk-8), ("9", $silk-9), ("10", $silk-10), ("11", $silk-11), ("12", $silk-12))
+
+[class^="silk--number"]
+  color: #ccc
+  padding: 5px 0
+  width: 30px
+  text-align: center
+  border-radius: 4px
+  display: inline-block
+
+@each $silk in $silk-list
+  .silk--number-#{nth($silk, 1)}
+    background-color: nth($silk, 2)
+    color: white
+
+.race-position-11, .race-position-12
+  opacity: .3
+  background-color: #ccc 
+  border-bottom-color: #333 !important

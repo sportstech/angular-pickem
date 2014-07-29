@@ -52,10 +52,10 @@
         <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
         <h1 class="logo">{{gameInfo.name}}</h1>
         <section class="app-bar-actions">
-          <div ng-if="gameInfo.accessState == 'loggedIn'">
+          <div ng-show="isLoggedIn()">
             <a href="#/landing" class="button--secondary">Logout</a>
           </div>
-          <div ng-if="gameInfo.accessState == 'loggedOut'">
+          <div ng-show="!isLoggedIn()">
             <a href class="button--secondary">Login</a>
           </div>
         <!-- Put App Bar Buttons Here -->
@@ -72,7 +72,12 @@
         <li ng-class="{ active: isCurrentPath('/leaderboard') }"><a href="#/leaderboard">Leaderboard</a></li>
       </ul>
     </nav>
-    <div ng-view></div>
+    <div ng-if="data.isLoading">
+          Loading...
+        </div>
+    <div ng-view>
+      
+    </div>
     <footer>
       <div>
         Powered By: <a ng-href="{{gameInfo.poweredByLink}}">{{gameInfo.poweredBy}}</a> | 
@@ -85,7 +90,7 @@
       </div>
     </footer>
     <!-- build:js scripts/main.min.js -->
-    <script src="scripts/main.js"></script>
+    <!--<script src="scripts/main.js"></script> -->
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

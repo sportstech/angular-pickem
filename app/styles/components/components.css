@@ -3116,6 +3116,81 @@ object {
   }
 }
 
+[class^="silk--number"] {
+  color: #cccccc;
+  padding: 5px 0;
+  width: 30px;
+  text-align: center;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.silk--number-1 {
+  background-color: black;
+  color: white;
+}
+
+.silk--number-2 {
+  background-color: red;
+  color: white;
+}
+
+.silk--number-3 {
+  background-color: green;
+  color: white;
+}
+
+.silk--number-4 {
+  background-color: blue;
+  color: white;
+}
+
+.silk--number-5 {
+  background-color: gray;
+  color: white;
+}
+
+.silk--number-6 {
+  background-color: orange;
+  color: white;
+}
+
+.silk--number-7 {
+  background-color: maroon;
+  color: white;
+}
+
+.silk--number-8 {
+  background-color: darkblue;
+  color: white;
+}
+
+.silk--number-9 {
+  background-color: darkorchid;
+  color: white;
+}
+
+.silk--number-10 {
+  background-color: darkslateblue;
+  color: white;
+}
+
+.silk--number-11 {
+  background-color: purple;
+  color: white;
+}
+
+.silk--number-12 {
+  background-color: sienna;
+  color: white;
+}
+
+.race-position-11, .race-position-12 {
+  opacity: 0.3;
+  background-color: #cccccc;
+  border-bottom-color: #333333 !important;
+}
+
 /**
 *
 * Themed styles

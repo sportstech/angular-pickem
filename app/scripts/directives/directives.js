@@ -34,3 +34,4 @@ myApp.directive('picks', function(){
     templateUrl: 'partials/directives/picks.html'
   };
 });
+

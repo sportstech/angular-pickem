@@ -86,7 +86,7 @@ gulp.task('styles:css', function () {
 
 // Compile Sass For Style Guide Components (app/styles/components)
 gulp.task('styles:components', function () {
-  return gulp.src('app/styles/components/components.scss')
+  return gulp.src('app/styles/components/components.scss', 'app/styles/components/components.sass')
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10,
@@ -100,7 +100,7 @@ gulp.task('styles:components', function () {
 
 // Compile Any Other Sass Files You Added (app/styles)
 gulp.task('styles:scss', function () {
-  return gulp.src(['app/styles/**/*.scss', '!app/styles/components/components.scss'])
+  return gulp.src(['app/styles/**/*.scss', 'app/styles/**/*.sass', '!app/styles/components/components.scss'])
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10,
