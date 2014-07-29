@@ -10,19 +10,24 @@ gameControllers.controller('MainCtrl', ['$scope', '$location', '$http', function
       twitter: 'http://www.twitter.com',
       google: 'http://www.google.com'
     },
-    gameState: 'picksOpened', // postLock
-    sessionState: 'loggedIn',
+    picksState: 'picksOpened', // picksOpened or picksClosed
+    gameState: 'preGame', // preGame, postGame, isGame
+    sessionState: 'loggedIn', // loggedIn or loggedOut
     poweredBy: 'Sports Technologies, LLC',
     poweredByLink: 'http://www.sportstechinc.com'
   };
+
   $scope.gameInfo = gameInfo;
 
   $scope.isCurrentPath = function (path) {
     return $location.path() == path;
   };
 
+
+  // All of the following *should* be removed from the controller and used a service, I believe.
+
   $scope.isPicksOpened = function() {
-    if (gameInfo.gameState == "picksOpened") {
+    if (gameInfo.picksState == "picksOpened") {
       return true;
     } else {
       return false;
@@ -35,6 +40,22 @@ gameControllers.controller('MainCtrl', ['$scope', '$location', '$http', function
     } else {
       return false;
     }
+  };
+
+  $scope.logout = function() {
+    // this will be rewritten
+    gameInfo.sessionState = "loggedOut";
+  };
+
+  $scope.login = function() {
+    // this will be rewritten
+    gameInfo.sessionState = "loggedIn";
+  };
+  
+  $scope.showClick = function() {
+    $scope.showContent = function() {
+      return true
+    };
   };
 
 }]);

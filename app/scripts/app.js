@@ -22,6 +22,9 @@ myApp.config(['$routeProvider', function($routeProvider){
       templateUrl: 'partials/leagues-details.html',
       controller: 'LeagueDetailsCtrl'
     })
+    .when('/login', {
+      templateUrl: 'partials/login.html'
+    })
     .when('/picks', {
       templateUrl: 'partials/picks.html',
       controller: "PicksCtrl"

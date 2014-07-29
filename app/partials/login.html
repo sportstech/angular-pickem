@@ -1,13 +1,23 @@
 <main>
   <h1>Login</h1>
-  <form name="loginForm" ng-controller="loginController" ng-submit="login(credentials)" nonvalidate>
-    <label for="username">Username:</label>
-    <input type="text" id="username" ng-model="credentials.username">
+  <div ng-if="!isLoggedIn()">
+    <form name="loginForm" ng-controller="loginController" ng-submit="login(credentials)" nonvalidate>
+      <p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" ng-model="credentials.username">
+      </p>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" ng-model="credentials.password">
+      <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" ng-model="credentials.password">
+      </p>
 
-    <button type="submit">Login</button>
-  </form>
+      <p><button type="submit" ng-click="login()">Login</button></p>
+      
+    </form>
+  </div>
+  <div ng-if="isLoggedIn()">
+    <p>You're 'logged in'. Get some <a href="#/picks">picks</a> happening!</p>
+  </div>
 
 </main>

@@ -1,5 +1,32 @@
 <section>
     <h1>Leagues</h1>
+    <div ng-show="isLoggedIn()">
+        <h2>My Leagues</h2>
+        <table class="table-3">
+            <colgroup>
+                <col span="1">
+                <col span="1">
+                <col span="1">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Access</th>
+                    <th>League Name</th>
+                    <th>Members</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="league in leagues | filter:isMember=true">
+                <td>{{league.accessType}}</td>
+                <td>
+                  <a ng-href="#/leagues-details/{{leagues.indexOf(league)}}">{{league.leagueName}}</a>
+                </td>
+                <td>{{countMembers(league.entries)}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2>All Leagues</h2>
     <table class="table-3">
         <colgroup>
             <col span="1">

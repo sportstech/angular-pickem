@@ -5,6 +5,6 @@ gameControllers.controller('LeagueCtrl', ['$scope', '$http', function($scope, $h
     $scope.leagues = data;
     $scope.countMembers = function(entriesObj) {
       return Object.keys(entriesObj).length;
-    }
+    };
   });
 }]);

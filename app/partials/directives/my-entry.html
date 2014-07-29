@@ -1,4 +1,4 @@
-<section ng-controller="LeaderboardCtrl">
+<section ng-controller="LeaderboardCtrl" ng-show="isLoggedIn()">
   <div ng-repeat="leaderboard in leaderboards | filter: isMyEntry=true" class="clear">
     <div class="g-wide--1">
       <p><strong>{{leaderboard.entry}}</strong></p>

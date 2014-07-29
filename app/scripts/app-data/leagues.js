@@ -3,6 +3,7 @@
     "id": 1,
     "accessType": "private",
     "leagueName": "Girl, It's True",
+    "isMember": true,
     "entries": [
       {
         "entryName": "Rob Milli",
@@ -28,6 +29,7 @@
     "id": 2,
     "accessType": "public",
     "leagueName": "Fabulous Musical Insects",
+    "isMember": true,
     "entries": [
       {
         "entryName": "John",
@@ -65,6 +67,7 @@
     "id": 3,
     "accessType": "public",
     "leagueName": "Rock & Roll Sinners",
+    "isMember": false,
     "entries": [
       {
         "entryName": "Geezer Butler",
@@ -89,12 +92,6 @@
         "rank": 4,
         "total": 360,
         "isMyEntry": false
-      },
-      {
-        "entryName": "Sho Nuff The Masta",
-        "rank": 5,
-        "total": 1,
-        "isMyEntry": true
       }
     ]
   }

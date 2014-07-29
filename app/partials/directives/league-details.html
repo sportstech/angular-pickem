@@ -1,18 +1,20 @@
 <section ng-model="leages">
   <div ng-repeat="league in leagues | filter: leagues[whichItem]">
     <h1 class="medium"><strong>{{leagues[whichItem].accessType}} league</strong></h1>
-    <div ng-if="leagues[whichItem].accessType == 'private'" >
-      <a href ng-click="show = !show" class="button--primary">Request Access</a>
-      <div ng-show="show">
-        <p>I don't know. You seem a bit suspicious to me. Your request was submitted to the board for review. We'll be in touch, maybe.</p>
-      </div>
+    
+    <div ng-if="isPrivate()">
+      <a href ng-click="showClick()" class="button--primary">
+        <span ng-show="showContent()"><i class="fa fa-check-circle"></i> Access Approved</span>
+        <span ng-show="!showContent()">Request Access</span>
+      </a>
     </div>
 
-    <div ng-if="leagues[whichItem].accessType == 'public'">
-      <a href ng-click="show = !show" class="button--primary">Join League</a>
-      <div ng-show="show">
-        <p>You're in! Welcome to the league, mang!</p>
-      </div>
+    <div ng-if="!isPrivate()">
+      <a href ng-click="showClick()" class="button--primary">
+        <span ng-show="showContent()"><i class="fa fa-check-circle"></i> Joined</span>
+        <span ng-show="!showContent()">Join League</span>
+      </a>
+      <a href ng-show="showContent()" class="button--secondary" ng-click="leave()"><i class="fa fa-times-circle"></i> Leave League</a>
     </div>
     
     <div class="clear">
@@ -43,7 +45,7 @@
          <tbody>
            <tr ng-repeat="entry in league.entries | filter: isMyEntry=true" class="is-my-entry">
              <td>{{entry.rank}}</td>
-             <td><i class="icon icon-tick"></i> {{entry.entryName}}</td>
+             <td><i class="fa fa-asterisk"></i> {{entry.entryName}}</td>
              <td>{{entry.total}}</td>
            </tr>
            <tr ng-repeat="entry in league.entries | filter: isMyEntry=false">
@@ -53,7 +55,7 @@
            </tr>
          </tbody>
      </table>
-     <p><i class="icon icon-tick"></i> = My entry</p>
+     <p><i class="fa fa-asterisk"></i> = My entry</p>
   </div>
   <div>
     <a href="/#/leagues" class="button--primary">Back to Leagues</a>

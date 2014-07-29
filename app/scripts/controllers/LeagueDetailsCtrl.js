@@ -6,6 +6,22 @@ gameControllers.controller('LeagueDetailsCtrl', ['$scope', '$http', '$routeParam
     $scope.whichItem = $routeParams.leagueId;
     $scope.countMembers = function(entriesObj) {
       return Object.keys(entriesObj).length;
-    }
+    };
+
+
+    $scope.isPrivate = function() {
+      if ($scope.leagues.accessType === 'private') {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    $scope.leave = function() {
+      $scope.showContent = function() {
+        return false;
+      };
+    };
+
   });
 }]);

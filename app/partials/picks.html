@@ -1,16 +1,14 @@
-<main class="clear">
-  
-  <my-entry></my-entry>
+<main>
+  <div my-entry></div>
   <div ng-show="!isLoggedIn()">
-    <p>You need to be logged into to make picks.</p>
+    <p><i class="fa fa-exclamation-triangle"></i> You need to be logged into to make picks, or to see your pick results.</p>
     <a href="#" class="button--primary">Login</a>
   </div>
-
   <div ng-show="isLoggedIn()">
     <div ng-show="!isPicksOpened()">
-      <p>Picks are currently closed.</p>
+      <p><i class="fa fa-lock"></i> Picks are currently closed.</p>
     </div>
-    <picks ng-show="isPicksOpened()"></picks>
+    <div picks ng-show="isPicksOpened()"></div>
   </div>
   
 </main>

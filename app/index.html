@@ -44,19 +44,20 @@
     <link rel="stylesheet" href="styles/components/components.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/sti.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- endbuild -->
   </head>
-  <body class="{{gameInfo.gameState}} {{gameInfo.accessState}}">
+  <body>
     <header class="app-bar promote-layer">
       <div class="app-bar-container">
         <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
         <h1 class="logo">{{gameInfo.name}}</h1>
         <section class="app-bar-actions">
           <div ng-show="isLoggedIn()">
-            <a href="#/landing" class="button--secondary">Logout</a>
+            <a href="#/landing" class="button--secondary" ng-click="logout()">Logout</a>
           </div>
           <div ng-show="!isLoggedIn()">
-            <a href class="button--secondary">Login</a>
+            <a href class="button--secondary" ng-click="login()">Login</a>
           </div>
         <!-- Put App Bar Buttons Here -->
         </section>
@@ -66,8 +67,8 @@
     <nav class="navdrawer-container promote-layer">
       <h4>Navigation</h4>
       <ul>
-        <li ng-class="{ active: isCurrentPath('/landing') }"><a href="#/landing">Home</a></li>
-        <li ng-class="{ active: isCurrentPath('/picks') }"><a href="#/picks">My Picks</a></li>
+        <li ng-class="{ active: isCurrentPath('/landing') }" ng-show="!isLoggedIn()"><a href="#/landing">Home</a></li>
+        <li ng-class="{ active: isCurrentPath('/picks') }" ng-show="isLoggedIn()"><a href="#/picks">My Picks</a></li>
         <li ng-class="{ active: isCurrentPath('/leagues') }"><a href="#/leagues">Leagues</a></li>
         <li ng-class="{ active: isCurrentPath('/leaderboard') }"><a href="#/leaderboard">Leaderboard</a></li>
       </ul>
